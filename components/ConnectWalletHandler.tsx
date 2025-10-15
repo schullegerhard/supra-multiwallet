@@ -242,7 +242,7 @@ export const ConnectWalletHandler: React.FC<ConnectWalletHandlerProps> = ({
       case 'success':
         return {
           title: `Connected to ${wallet?.name.replace(' Wallet', '') || 'Wallet'}`,
-          subtitle: 'Welcome back to Crystara',
+          subtitle: 'Welcome back to MyDApp',
           buttonText: 'Connected',
         };
       case 'error':
@@ -517,7 +517,7 @@ export const ConnectWalletHandler: React.FC<ConnectWalletHandlerProps> = ({
                         No Wallets Detected
                       </h3>
                       <p className="text-gray-400 text-sm">
-                        Please install a wallet extension to connect to Crystara
+                        Please install a wallet extension to connect to MyDApp
                       </p>
                     </div>
                   )}
