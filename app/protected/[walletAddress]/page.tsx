@@ -3,6 +3,8 @@ import { verifyToken } from '@/lib/auth';
 import { redirect } from 'next/navigation';
 import ProtectedClient from './client';
 
+export const runtime = 'edge';
+
 interface PageProps {
   params: {
     walletAddress: string;

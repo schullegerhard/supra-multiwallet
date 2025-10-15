@@ -4,6 +4,8 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Lock, Shield, Key, CheckCircle } from 'lucide-react';
 
+export const runtime = 'edge';
+
 interface ProtectedClientProps {
   address: string;
 }
