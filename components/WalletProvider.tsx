@@ -1,7 +1,7 @@
 "use client"
 
 import React, { useState, useEffect, createContext, useContext } from 'react';
-import useStarkeyWallet from '@/hooks/useSupraMultiWallet';
+import useSupraMultiWallet from '@/hooks/useSupraMultiWallet';
 import { WALLET_EVENTS } from '@/hooks/useSupraMultiWallet';
 
 // Create a context to hold the wallet state and a force update function
@@ -9,7 +9,7 @@ const StarkeyContext = createContext<any>(null);
 
 export function WalletProvider({ children }: { children: React.ReactNode }) {
   const [forceUpdateKey, setForceUpdateKey] = useState(0);
-  const starkey = useStarkeyWallet();
+  const starkey = useSupraMultiWallet();
   // Listen for wallet connection events
   useEffect(() => {
     const handleWalletConnected = () => {
@@ -36,6 +36,6 @@ export function WalletProvider({ children }: { children: React.ReactNode }) {
 
 // Custom hook that combines the StarkeyProvider with useStarkeyWallet
 export function useStarkeyWithRefresh() {
-  const starkey = useStarkeyWallet();
+  const starkey = useSupraMultiWallet();
   return starkey;
 } 
