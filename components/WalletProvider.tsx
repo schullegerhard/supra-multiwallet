@@ -5,7 +5,7 @@ import useSupraMultiWallet from '@/hooks/useSupraMultiWallet';
 import { WALLET_EVENTS } from '@/hooks/useSupraMultiWallet';
 
 // Create a context to hold the wallet state and a force update function
-const StarkeyContext = createContext<any>(null);
+const SupraContext = createContext<any>(null);
 
 export function WalletProvider({ children }: { children: React.ReactNode }) {
   const [forceUpdateKey, setForceUpdateKey] = useState(0);
@@ -28,14 +28,14 @@ export function WalletProvider({ children }: { children: React.ReactNode }) {
   
   // The key prop forces the component to re-mount when the wallet connects
   return (
-    <StarkeyContext.Provider value={null} key={forceUpdateKey}>
+    <SupraContext.Provider value={null} key={forceUpdateKey}>
       {children}
-    </StarkeyContext.Provider>
+    </SupraContext.Provider>
   );
 }
 
 // Custom hook that combines the StarkeyProvider with useStarkeyWallet
-export function useStarkeyWithRefresh() {
+export function useSupraMultiWalletWithRefresh() {
   const starkey = useSupraMultiWallet();
   return starkey;
 } 

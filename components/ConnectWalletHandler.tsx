@@ -1,7 +1,8 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { Dialog, DialogContent } from '@/components/ui/dialog';
+import { Dialog, DialogContent, DialogDescription, DialogTitle } from '@/components/ui/dialog';
+import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 import { Button } from '@/components/ui/button';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
@@ -15,6 +16,7 @@ import useSupraMultiWallet from '@/hooks/useSupraMultiWallet';
 import starkeyIcon from '@/public/walletIcons/Starkey.png';
 import ribbitIcon from '@/public/walletIcons/Ribbit.jpg';
 import logo from '@/public/main/icon.png';
+
 
 // Constants
 const RECENT_WALLET_KEY = 'recent_wallet_type';
@@ -430,6 +432,8 @@ export const ConnectWalletHandler: React.FC<ConnectWalletHandlerProps> = ({
         open={showWalletModal}
         onOpenChange={handleModalClose}
       >
+        <VisuallyHidden asChild><DialogTitle>Select a wallet</DialogTitle></VisuallyHidden>
+        <VisuallyHidden asChild><DialogDescription>Select a wallet to connect to MyDApp</DialogDescription></VisuallyHidden>
         <DialogContent className="px-4 py-6 w-[90%] mx-auto max-w-sm bg-gradient-to-br from-brand-dark via-gray-900 to-brand-dark border border-brand-dark sm:rounded-3xl rounded-3xl">
 
 

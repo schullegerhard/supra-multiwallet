@@ -848,6 +848,7 @@ const useSupraMultiWallet = () => {
         localStorage.setItem('isSigningWallet', 'true');
 
         const hexMessage = '0x' + Buffer.from(message, 'utf8').toString('hex');
+
         const response = await provider.signMessage({
           message: hexMessage,
           nonce,

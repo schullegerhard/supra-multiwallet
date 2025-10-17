@@ -93,6 +93,7 @@ export function SendSupraTokens() {
                     value={formData.receiverAddress}
                     onChange={(e) => setFormData({...formData, receiverAddress: e.target.value})}
                     placeholder="0x..."
+                    suppressHydrationWarning={true}
                     className="w-full px-3 py-2 bg-gray-800 border border-gray-700 rounded-md text-white placeholder:text-gray-500 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
                     disabled={isSubmitting}
                 />
@@ -111,6 +112,7 @@ export function SendSupraTokens() {
                     step="0.00000001"
                     min="0"
                     value={formData.amount}
+                    suppressHydrationWarning={true}
                     onChange={(e) => setFormData({...formData, amount: e.target.value})}
                     placeholder="0.00"
                     className="w-full px-3 py-2 bg-gray-800 border border-gray-700 rounded-md text-white placeholder:text-gray-500 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
