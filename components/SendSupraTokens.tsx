@@ -44,7 +44,26 @@ export function SendSupraTokens() {
 
         setIsSubmitting(true);
 
-        try {
+    try {
+            // Serialize transaction arguments using ABI-based serialization
+            // const serializedArgs = await moveUtils.serializeTransactionArgs(
+            //     [
+            //     formData.receiverAddress, // Raw address string
+            //     Number(formData.amount) * 100_000_000, // Raw number (will be converted to u64)
+            //     ],
+            //     "0x0000000000000000000000000000000000000000000000000000000000000001",
+            //     "supra_account",
+            //     "transfer_coins"
+            // );
+
+            // const txHash = await supraMultiWallet.sendRawTransaction(
+            //     "0x0000000000000000000000000000000000000000000000000000000000000001",
+            //     "supra_account",
+            //     "transfer_coins",
+            //     serializedArgs,
+            //     ["0x1::supra_coin::SupraCoin"]
+            // );
+            
             // DO NOT MODIFY - User's exact transaction parameters
             const txHash = await supraMultiWallet.sendRawTransaction(
                 "0x0000000000000000000000000000000000000000000000000000000000000001",
