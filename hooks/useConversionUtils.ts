@@ -342,6 +342,13 @@ const useConversionUtils = () => {
                     }
                     ser.serializeBool(value);
                     break;
+                
+                case '0x1::string::String':
+                    if (typeof value !== 'string') {
+                        throw new Error(`Expected string, got ${typeof value}`);
+                    }
+                    ser.serializeStr(value);
+                    break;
 
                 default:
                     throw new Error(`Unsupported type: ${type}`);
